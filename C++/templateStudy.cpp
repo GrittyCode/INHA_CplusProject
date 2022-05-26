@@ -33,7 +33,6 @@ template <class Any> void Swap(Any& a, Any& b)
 	b = temp;
 }
 
-
 //템플릿의 한계
 template <typename Any, typename Any2> void Swap(Any& a, Any& b)
 {
@@ -63,6 +62,8 @@ template<> void Swap<Job>(Job& a, Job& b)
 void Show(Job& j);
 int main()
 {
+	int a, b;
+	a = 10, b = 20;
 	cout.precision(2);
 	cout.setf(ios::fixed, ios::floatfield);
 	int i = 10, j = 20;
@@ -81,6 +82,10 @@ int main()
 	cout << "job 교환후: \n";
 	Show(sue);
 	Show(sideny);
+
+	//int형식 일 때
+	Swap<int>(a, b);
+	cout << "a : " << a << "b : " << b << endl;
 	return 0;
 }
 void Show(Job& j)
